@@ -17,6 +17,8 @@ public class DosenDemo17 {
             System.out.println("3. Sorting ASC (Bubble Sort)");
             System.out.println("4. Sorting DSC (Selection Sort)");
             System.out.println("5. Insertion Sort");
+            System.out.println("6. Cari Nama Dosen (Sequential Search)");
+            System.out.println("7. Cari Usia Dosen (Binary Search)");
             System.out.println("0. Keluar");
             System.out.println("-------------------------------");
             System.out.print("Pilih menu: ");
@@ -53,7 +55,7 @@ public class DosenDemo17 {
                     break;
                 case 3:
                     System.out.println("Data dosen diurutkan berdasarkan usia (ASC): ");
-                    data.SortingASC();
+                    data.SortingASC(null);
                     data.tampil();
                     break;
                 case 4:
@@ -66,6 +68,25 @@ public class DosenDemo17 {
                     data.insertionSort();
                     data.tampil();
                     break;
+                case 6:
+                    //Melakukan pencarian data sequential
+                    System.out.println("Masukkan nama dosen yang dicari: ");
+                    System.out.print("Nama Dosen: ");
+                    String cari = input.nextLine();
+
+                    // System.out.println("Menggunakan sequential searching");
+                    int posisi = data.PencarianDataSequential17(cari);
+                    data.tampilDataSearchSequential(cari, posisi);
+                    break;
+                case 7:
+                    //Melakukan pencarian data binary
+                    System.out.println("Masukkan usia dosen yang dicari: ");
+                    System.out.print("Usia Dosen : ");
+                    int cariUsia = input.nextInt();
+                    
+                    int posisi2 = data.PencarianDataBinary17(cariUsia, 0, jmlDsn-1);
+                    data.tampilPosisiBinary(jmlDsn, posisi2);
+                    data.tampilDataSearchBinary(jmlDsn, posisi2);
                 case 0:
                     System.out.println("Program selesai.");
                     break;
