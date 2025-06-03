@@ -1,7 +1,7 @@
 package CaseMethod2;
 
 public class TransaksiPengisian {
-    Kendaraan kendaraan;
+    Kendaraan kendaraan; 
     BBM bbm;
     double liter;
     double totalBayar;

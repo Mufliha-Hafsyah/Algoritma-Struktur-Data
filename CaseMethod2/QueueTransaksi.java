@@ -19,7 +19,7 @@ public class QueueTransaksi {
         return size == max;
     }
 
-    public void enqueue(TransaksiPengisian transaksi) {
+    public void enqueue(TransaksiPengisian transaksi) { //kendaraan yg udah dilayani nanti masuk ke queue
         if (isFull()) {
             System.out.println("Queue transaksi penuh!");
         } else {
@@ -62,11 +62,11 @@ public class QueueTransaksi {
         }
     }
 
-    public void clear() {
-        front = rear = -1;
-        size = 0;
-        System.out.println("Queue transaksi dikosongkan.");
-    }
+    // public void clear() {
+    //     front = rear = -1;
+    //     size = 0;
+    //     System.out.println("Queue transaksi dikosongkan.");
+    // }
 
     public int getSize() {
         return size;
