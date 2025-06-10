@@ -8,4 +8,5 @@ public class BBM {
         this.namaBBM = namaBBM;
         this.hargaPerLiter = harga;
     }
+    
 }

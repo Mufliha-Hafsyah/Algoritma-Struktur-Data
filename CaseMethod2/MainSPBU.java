@@ -59,7 +59,7 @@ public class MainSPBU {
                 case 5:
                     System.out.println("-- Riwayat Transaksi --");
                     System.out.println("Daftar Transaksi:");    
-                riwayat.tampilkanTransaksi();
+                    riwayat.tampilkanTransaksi();
                     break;
                 case 0:
                     System.out.println("Terima kasih.");

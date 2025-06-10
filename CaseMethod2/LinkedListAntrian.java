@@ -27,10 +27,14 @@ public class LinkedListAntrian {
     }
 
     public Kendaraan layaniKendaraan() {
-        if (isEmpty()) return null;
+        if (isEmpty()){ 
+            return null;
+        }
         Kendaraan data = head.data;
         head = head.next;
-        if (head == null) tail = null;
+        if (head == null){
+            tail = null;
+        }
         size--;
         return data;
     }

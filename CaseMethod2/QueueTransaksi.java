@@ -6,7 +6,7 @@ public class QueueTransaksi {
 
     public QueueTransaksi(int kapasitas) {
         max = kapasitas;
-        data = new TransaksiPengisian[max];
+        data = new TransaksiPengisian[max]; //array untuk menyimpan transaksi bbm dan plat kendaraan dari linked list
         size = 0;
         front = rear = -1;
     }
@@ -33,22 +33,6 @@ public class QueueTransaksi {
         }
     }
 
-    public TransaksiPengisian dequeue() {
-        if (isEmpty()) {
-            System.out.println("Queue transaksi kosong!");
-            return null;
-        } else {
-            TransaksiPengisian temp = data[front];
-            size--;
-            if (isEmpty()) {
-                front = rear = -1;
-            } else {
-                front = (front + 1) % max;
-            }
-            return temp;
-        }
-    }
-
     public void tampilkanTransaksi() {
         if (isEmpty()) {
             System.out.println("Tidak ada transaksi.");
@@ -56,11 +40,29 @@ public class QueueTransaksi {
             int i = front;
             while (true) {
                 data[i].tampilkanTransaksi();
-                if (i == rear) break;
+                if (i == rear){ 
+                    break;
+                }
                 i = (i + 1) % max;
             }
         }
     }
+
+    // public TransaksiPengisian dequeue() {
+    //     if (isEmpty()) {
+    //         System.out.println("Queue transaksi kosong!");
+    //         return null;
+    //     } else {
+    //         TransaksiPengisian temp = data[front];
+    //         size--;
+    //         if (isEmpty()) {
+    //             front = rear = -1;
+    //         } else {
+    //             front = (front + 1) % max;
+    //         }
+    //         return temp;
+    //     }
+    // }
 
     // public void clear() {
     //     front = rear = -1;
@@ -68,7 +70,7 @@ public class QueueTransaksi {
     //     System.out.println("Queue transaksi dikosongkan.");
     // }
 
-    public int getSize() {
-        return size;
-    }
+    // public int getSize() {
+    //     return size;
+    // }
 }
