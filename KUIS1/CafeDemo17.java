@@ -2,9 +2,6 @@ package KUIS1;
 
 import java.util.Scanner;
 
-import JOBSHEET3.DataDosen17;
-import JOBSHEET3.Dosen17;
-
 public class CafeDemo17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

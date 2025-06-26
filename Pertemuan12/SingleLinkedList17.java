@@ -1,7 +1,7 @@
 public class SingleLinkedList17 {
     Node17 head;
     Node17 tail;
-
+    int count;
     boolean isEmpty() {
         return (head == null);
     }
@@ -21,6 +21,10 @@ public class SingleLinkedList17 {
     }
 
     public void addFirst(Mahasiswa17 input) {
+        // if (count > 10){
+        //     System.out.println("Antrian penuh, tdk dpt ditambahkan");
+        //     System.exit(1);
+        // }
         Node17 ndInput = new Node17(input, null);
         if (isEmpty()) {
             head = ndInput;
@@ -99,18 +103,20 @@ public class SingleLinkedList17 {
     }
 
     public void removeFirst() {
-        if (isEmpty()) {
-            System.out.println("Linked list masih kosong, tidak dapat dihapus!");
-        } else if (head == tail) {
-            head = tail = null;
-        } else {
-            head = head.next;
-        }
+        // for (int i = 0; i < 2; i++){
+            if (isEmpty()) {
+                System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+            } else if (head == tail) {
+                head = tail = null;
+            } else {
+                head = head.next;
+            }
+        //}
     }
 
     public void removeLast() {
         if (isEmpty()) {
-            System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+        System.out.println("Linked list masih kosong, tidak dapat dihapus!");
         } else if (head == tail) {
             head = tail = null;
         } else {
@@ -122,7 +128,7 @@ public class SingleLinkedList17 {
             tail = temp;
         }
     }
-
+    
     public void remove(String key){
         if (isEmpty()) {
             System.out.println("Linked list masih kosong, tidak dapat dihapus!");
@@ -159,3 +165,37 @@ public class SingleLinkedList17 {
         }
     }
 }
+
+// public void removeLast() {
+//     if(count % 2 == 0){
+//         for(int i=0; i < 2; i++){
+//            if (isEmpty()) {
+//             System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+//             } else if (head == tail) {
+//                 head = tail = null;
+//             } else {
+//                 Node17 temp = head;
+//                 while (temp.next != tail) {
+//                     temp = temp.next;
+//                 }
+//                 temp.next = null;
+//                 tail = temp;
+//             }
+//             count--; 
+//         }
+//     }else{
+//         if (isEmpty()) {
+//         System.out.println("Linked list masih kosong, tidak dapat dihapus!");
+//         } else if (head == tail) {
+//             head = tail = null;
+//         } else {
+//             Node17 temp = head;
+//             while (temp.next != tail) {
+//                 temp = temp.next;
+//             }
+//             temp.next = null;
+//             tail = temp;
+//         }
+//         count--;
+//     }
+// }

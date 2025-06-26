@@ -3,6 +3,7 @@ package doublelinkedlist;
 public class DoubleLinkedLists {
     Node head;
     int size;
+    int count;
 
     public DoubleLinkedLists() {
         head = null;
@@ -14,6 +15,10 @@ public class DoubleLinkedLists {
     }
 
     public void addFirst(int item){
+        if (count > 10){
+            System.out.println("Antrian penuh");
+            return;
+        }
         if (isEmpty()) {
             head = new Node(null, item, null);
         } else {
@@ -22,6 +27,7 @@ public class DoubleLinkedLists {
             head = newNode;
         }
         size++;
+        count++;
     }
 
     public void addLast(int item){
